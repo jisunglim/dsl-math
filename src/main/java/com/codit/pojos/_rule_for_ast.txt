@@ -1,0 +1,52 @@
+The compiler will need to represent and manipulate abstract syntax as data
+structure.
+
+1. Grammar -> Tree
+Trees are described by a grammar.
+
+2. Abstract classes
+A tree is described by one or more abstract classes, corresponding to a symbol
+in the grammar.
+
+3. And its extended classes
+Each abstract class is extended by one or more subclasses, one for each
+grammar rule.
+
+4. Non-trivial symbol in the right-hand side -> One field variable for each
+For each non-trivial symbol in the right hand side of a rule, there will be
+one field in the corresponding class.
+
+5. Constructor -> initializes all the field.
+Every class will have a constructor function that initialzes all the field.
+
+6. Only initialzed at creation time, Never modified.
+Data structures are initialized when they are created (by the constructor
+functions), and are never modified after that (until they are eventually
+discarded).
+
+
+Abstract Syntax Tree Node
+  public interface AstNode() {}
+
+compileUnit -> MATH ID LBRACE (stm SEMI)* RBRACE EOF
+  public abstract class compileUnit() {
+    Statement stm
+  }
+
+stm -> expr            # simpleStmt
+
+stm -> ID ASSIGN expr  # assignStmt
+
+
+
+expr -> LPAREN expr RPAREN                 # parenExpr
+
+expr -> op=(ADD|SUB) expr                  # unaryExpr
+
+expr -> left=expr op=(MUL|DIV) right=expr  # infixExpr
+
+expr -> left=expr op=(ADD|SUB) right=expr  # infixExpr
+
+expr -> value=ID                           # idExpr
+
+expr -> value=NUM                          # numberExpr
