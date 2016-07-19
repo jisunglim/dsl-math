@@ -3,7 +3,7 @@ package com.codit.pojos;
 /**
  * Created by Jisung on 7/15/2016.
  */
-public class NumberExpression extends Expression {
+public final class NumberExpression extends Expression {
 
   public final double value;
 

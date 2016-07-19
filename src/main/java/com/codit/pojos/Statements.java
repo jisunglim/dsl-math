@@ -7,7 +7,7 @@ import java.util.List;
  *
  * Created by Jisung on 7/14/2016.
  */
-public class Statements extends AstNode {
+public final class Statements extends AstNode {
 
   private final List<Statement> statementList;
 

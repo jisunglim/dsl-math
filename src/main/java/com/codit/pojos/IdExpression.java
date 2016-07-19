@@ -3,7 +3,7 @@ package com.codit.pojos;
 /**
  * Created by Jisung on 7/15/2016.
  */
-public class IdExpression extends Expression {
+public final class IdExpression extends Expression {
 
   public final String id;
 
