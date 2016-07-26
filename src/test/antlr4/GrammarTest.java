@@ -70,7 +70,7 @@ public class GrammarTest {
         {false, "// comment with no initial block\n"}
     });
   }
-  private static final Logger logger = LoggerFactory.getLogger(LoggingListener.class);
+  private static final Logger logger = LoggerFactory.getLogger(GrammarTest.class);
   @Test
   public void testRule() {
 
